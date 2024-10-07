@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<Title> Ajout élève </title>
+		<link type = "text/css" rel = "stylesheet" href = "ajout_eleve.css">
+	</head>
+	<body>
+		<h1>Ajouter un élève</h1>
+		<p>
+		Pour ajouter un élève dans la base de données, merci de renseigner les informations demandées et de cliquer sur ajouter
+		</p>
+		<form action = "ajout_eleve.php" method = "POST">
+		<br>
+		<table> 
+			<tr>
+				<td>Nom :<td/><td> <input type = "text" name = "l_name" required></td>
+			</tr>			
+			<tr>
+				<td>Prénom :<td/><td> <input type = "text" name = "f_name" required></td>
+			</tr>			
+			<tr>
+				<td>Date de naissance :<td/><td> <input type = "date" name = "date_bd" required></td>
+			</tr>
+		</table>
+		<br>
+		<input type = "Submit" value = "Ajouter">
+
+	</body>
+</html>

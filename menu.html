@@ -1,0 +1,33 @@
+<html>
+	<Head>
+		<link rel = "stylesheet" type = "text/css" href = "menu.css">
+		<meta charset = "UTF-8">
+		<title> Menu </title>
+	</head>
+	<body>
+		<!--<h1> Navigation </h1>
+		<ul> 
+			<li><a href = "accueil.html" target = "content"> Accueil</a></li> 
+			<li><a href = "ajout_eleve.html" target = "content"> Ajouter élève</a></li> 
+			<li><a href = "ajout_theme.html" target = "content"> Ajouter thème</a></li> 
+			<li><a> ...</a></li> 
+		
+		</ul>
+		-->
+
+		<h1> Menu </h1>
+		<div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div")'><a href = "accueil.html" target = "content">Accueil</a></div>
+		<div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div")'><a href = "ajout_eleve.html" target = "content">Ajouter un élève</a></div>
+		<div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div")'><a href = "ajout_theme.html" target = "content">Ajouter un thème</a></div>
+		<script>
+			function changeColors(raiser){	
+				//window.alert("HERE");
+				var elems = document.getElementsByClassName("menu_elem");
+				for (var i = 0; i < elems.length; i++){
+					elems[i].style.backgroundColor = "#184E5B";
+				}
+				document.getElementById(raiser).style.backgroundColor = "#DDDDDD";
+			}
+		</script>
+	</body>
+</html>
