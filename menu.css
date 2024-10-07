@@ -3,13 +3,19 @@ body {
 	padding : 0%;
 	border : 0px;
 	margin-right : 0px;
-	
+	margin-left : 0px;
 }
 
 .menu_elem {
 	
-	background-color : #145E5B;
+	background-color : #154E5B;
 	margin-left : 0px;
 	margin-right : 0px;
+	padding : 10px;
+	text-decoration : none;
 	
+}
+
+h1 {
+	text-align : center;
 }
