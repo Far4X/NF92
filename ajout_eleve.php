@@ -2,7 +2,7 @@
 	<head>
 		<meta charset = "UTF-8">
 		<title> Elève ajouté </title>
-		<link rel = "stylesheet" href = "ajout_eleve.css" type = "text/css">
+		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
 		<h1> Ajouter un élève </h1>
