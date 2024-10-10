@@ -16,9 +16,9 @@
 		-->
 
 		<h1> Menu </h1>
-		<div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div")'><a href = "accueil.html" target = "content">Accueil</a></div>
-		<div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div")'><a href = "ajout_eleve.html" target = "content">Ajouter un élève</a></div>
-		<div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div")'><a href = "ajout_theme.html" target = "content">Ajouter un thème</a></div>
+		<label for = "Acc_link"><div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div")'><a href = "accueil.html" target = "content" id = "Acc_link">Accueil</a></div></label>
+		<label for = "Ajt_link"><div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div")'><a href = "ajout_eleve.html" target = "content" id = "Aje_link">Ajouter un élève</a></div></label>
+		<label for="Ajt_link"><div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div")'><a href = "ajout_theme.html" target = "content" if = "Ajt_link">Ajouter un thème</a></div></label>
 		<script>
 			function changeColors(raiser){	
 				
