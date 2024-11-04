@@ -9,14 +9,22 @@
 
 		<?php
 		$name = $_POST["name"];
-		date_default_timezone_set('Europe/Paris');
-		$tddate = date("Y\-m\-d");
-		printf("Requête analysé le %s <br><br>", $tddate);
+		$desc = $_POST["desc"];
+		printf("Requête analysée");
 		if (empty($name)){
 			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité.</div>");
 		}
 		else {
+			$dbhost = "tuxa.sme.utc";
+			$dbuser = "nf92a065";
+			$dbpass = "ghdLQ90Fv3fr";
+			$dbname = "nf92a065";
+
+			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
+			$query = 'insert into themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) values (NULL, "'.$name.'", 0, "'.$desc.'");';
+			$rep = mysqli_query($connect, $query);
 			printf("Vous avez ajouté le thème %s", $name);
+			mysqli_close($connect);
 		}
 	?>
 	

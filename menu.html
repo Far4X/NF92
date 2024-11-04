@@ -15,10 +15,11 @@
 		</ul>
 		-->
 
-		<h1> Menu </h1>
-		<a id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div")' href = "accueil.html" target = "content">Accueil</a>
-		<a id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div")' href = "ajout_eleve.html" target = "content">Ajouter un élève</a>
-		<a id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div")' href = "ajout_theme.html" target = "content">Ajouter un thème</a>
+		<h1> Menu</h1>
+	
+		<div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div");parent.frames["content"].location.replace("accueil.html")' style = "background-color:rgb(221, 221, 221)">Accueil</div>
+		<div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div");parent.frames["content"].location.replace("ajout_eleve.html")'>Ajouter un élève</div>
+		<div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div");parent.frames["content"].location.replace("ajout_theme.html")'>Ajouter un thème</div>
 		<script>
 			function changeColors(raiser){	
 				
