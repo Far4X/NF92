@@ -16,10 +16,22 @@
 		-->
 
 		<h1> Menu</h1>
-	
-		<div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div");parent.frames["content"].location.replace("accueil.html")' style = "background-color:rgb(221, 221, 221)">Accueil</div>
-		<div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div");parent.frames["content"].location.replace("ajout_eleve.html")'>Ajouter un élève</div>
-		<div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div");parent.frames["content"].location.replace("ajout_theme.html")'>Ajouter un thème</div>
+			<div id = "acc_div" class = "menu_elem" onclick = 'changeColors("acc_div");parent.frames["content"].location.replace("accueil.html")' style = "background-color:rgb(221, 221, 221)">Accueil</div>
+		<h2>Thèmes</h2>
+			<div id = "ath_div" class = "menu_elem" onclick = 'changeColors("ath_div");parent.frames["content"].location.replace("ajout_theme.html")'>Ajouter un thème</div>
+			<div id = "sth_div" class = "menu_elem" onclick = 'changeColors("sth_div");parent.frames["content"].location.replace("suppression_theme.php")'>Supprimer un thème</div>
+		<h2>Séances</h2>
+			<div id = "asc" class = "menu_elem" onclick = 'changeColors("asc_div");parent.frames["content"].location.replace("ajout_seance.php")'>Ajouter une séance</div>
+			<div id = "vsc" class = "menu_elem" onclick = 'changeColors("vsc_div");parent.frames["content"].location.replace("validation_seance.php")'>Valider une séance</div>
+		<h2>Eleves</h2>
+			<div id = "ael_div" class = "menu_elem" onclick = 'changeColors("ael_div");parent.frames["content"].location.replace("ajout_eleve.html")'>Ajouter un élève</div>
+			<div id = "cel_div" class = "menu_elem" onclick = 'changeColors("cel_div");parent.frames["content"].location.replace("consultation_eleve.php")'>Consulter un élève</div>
+			
+			<div id = "ine_div" class = "menu_elem" onclick = 'changeColors("ine_div");parent.frames["content"].location.replace("inscription_eleve.php")'>Inscrire un élève</div>
+			<div id = "die_div" class = "menu_elem" onclick = 'changeColors("die_div");parent.frames["content"].location.replace("desinscription_seance.php")'>Désinscrire un élève</div>
+			<div id = "vil_div" class = "menu_elem" onclick = 'changeColors("vil_div");parent.frames["content"].location.replace("visualisation_calendrier_eleve.php")'>Visualiser le calendrier </br> d'un élève</div>
+		
+
 		<script>
 			function changeColors(raiser){	
 				
