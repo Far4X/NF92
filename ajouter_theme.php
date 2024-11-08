@@ -14,6 +14,10 @@
 		if (empty($name)){
 			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité.</div>");
 		}
+		else if (strlen($name) > 30){
+
+			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité. Le nom est trop long.</div>");
+		}
 		else {
 			$dbhost = "tuxa.sme.utc";
 			$dbuser = "nf92a065";
@@ -21,6 +25,7 @@
 			$dbname = "nf92a065";
 
 			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
+
 			$query = 'insert into themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) values (NULL, "'.$name.'", 0, "'.$desc.'");';
 			$rep = mysqli_query($connect, $query);
 			printf("Vous avez ajouté le thème %s", $name);

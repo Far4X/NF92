@@ -4,8 +4,6 @@ body {
 	border : 0px;
 	margin-right : 0px;
 	margin-left : 0px;
-	margin-top : 20px;
-	
 }
 
 .menu_elem {
@@ -14,11 +12,21 @@ body {
 	margin-left : 0px;
 	margin-right : 0px;
 	padding : 10px;
+	padding-left : 20px;
 	text-decoration : none;
+	
 }
 
+.menu_elem:hover {
+	cursor : pointer;
+}
 h1 {
 	text-align : center;
+}
+
+h2 {
+	padding-left : 10px;
+	margin-left : 0px;
 }
 
 a {
