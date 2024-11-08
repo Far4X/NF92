@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset = "UTF-8">
-		<title> Elève ajouté </title>
+		<title>Ajout d'élève </title>
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
