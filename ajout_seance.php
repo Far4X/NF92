@@ -32,8 +32,17 @@
 					if (!$row[2]){
 						echo "<option value = ".$row[0].">".$row[1]."</option>"; 
 					}
-				}
 				
+				}
+
+				$query = "select * from seances as s1 join seances as s2 where s1.DateSeance = s2.DateSeance and s1.idTheme = s2.idTheme";
+
+				$result = mysqli_query($connect, $query);
+				while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
+					if (!$row[2]){
+						printf("<br>Conflit : %s %s", $row[0], $row[3]);		
+					}
+				}
 				mysqli_close($connect)
 
 
