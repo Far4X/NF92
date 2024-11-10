@@ -8,7 +8,7 @@
 		<h1>Inscription d'un élève à une séance</h1>
 		<?php
 			$dbhost = "tuxa.sme.utc";
-			$dsuser = "nf92a065";
+			$dbuser = "nf92a065";
 			$dbpass = "ghdLQ90Fv3fr";
 			$dbname = "nf92a065";
 			
