@@ -8,7 +8,7 @@
 		<h1>Inscription d'un élève à une séance</h1>
 		<?php
 			$dbhost = "tuxa.sme.utc";
-			$dsuser = "nf92a065";
+			$dbuser = "nf92a065";
 			$dbpass = "ghdLQ90Fv3fr";
 			$dbname = "nf92a065";
 			
@@ -19,7 +19,7 @@
 			$result = mysqli_query($connect, $query);
 			if (mysqli_num_rows($result) == 0){
 				$query = "INSERT INTO inscriptions (`idseance`, `ideleve`, `note`) VALUES ('".$ideleve."', '".$idseance."', -1)";
-				printf("L'élève a bien été ajouté à la séance"); //Si tps : mettre nom el et th + date sc
+				printf("L'élève a bien été ajouté à la séance"); //Si tps : mettre nom el et th + date sc + check si max capa a déjà été atteint
 			}
 			else {
 				printf("L'élève fait déjà partie de cette seance !");

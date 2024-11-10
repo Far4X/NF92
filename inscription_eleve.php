@@ -12,7 +12,7 @@
 			<tr><td>Elève : </td></td><select name = "ideleve">
 			<?php
 				$dbhost = "tuxa.sme.utc";
-				$dsuser = "nf92a065";
+				$dbuser = "nf92a065";
 				$dbpass = "ghdLQ90Fv3fr";
 				$dbname = "nf92a065";
 				
