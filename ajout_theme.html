@@ -5,7 +5,8 @@
 		<link type = "text/css" rel = "stylesheet" href = "style.css">
 	</head>
 	<body>
-		<h1>Ajouter un thème</h1>
+		<div class = "page_header">Ajouter un thème</div>
+		<div class = "page_content">
 		<p>
 		Pour ajoute un thème, choisissez les composantes et cliquez sur ajouter.
 		</p>
@@ -13,14 +14,15 @@
 		<br>
 		<table> 
 			<tr>
-				<td>Nom du thème:<td/><td> <input type = "text" name = "name" required maxlength = "30"></td>
+				<td><label for = "name_ent">Nom du thème:</label><td/><td> <input id = "name_ent" type = "text" name = "name" required maxlength = "30"></td>
 			</tr>			
 			<tr>
-				<td>Description du thème:<td/><td> <textarea  name = "desc" required></textarea></td>
+				<td><label for = "desc_ent">Description du thème:</label><td/><td> <textarea id = "desc_ent" name = "desc" required cols = "80" rows = "20"></textarea></td>
 			</tr>			
 		</table>
 		<br>
 		<input type = "Submit" value = "Ajouter">
-
+		</div>
+		<div class = "page_footer"></div>
 	</body>
 </html>

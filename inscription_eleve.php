@@ -5,8 +5,8 @@
 		<title>Inscription d'un élève à une séance</title>
 	</head>
 	<body>
-		<h1>Inscription d'un élève à une séance</h1>
-
+		<div class = "page_header">Inscription d'un élève à une séance</div>
+		<div class = "page_content">
 		<form action = "inscrire_eleve.php" method = "POST">
 		<table border = 0>
 		<tr><td>Elève : </td><td><select name = "ideleve">
@@ -39,5 +39,7 @@
 		</table>
 		<input type = "Submit" value = "Inscrire">
 		</form>
+		</div>
+		<div class = "page_footer"></div>
 	</body>
 </html>
