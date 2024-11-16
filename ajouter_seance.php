@@ -5,8 +5,8 @@
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
-		<h1> Ajouter une séance </h1>
-
+		<div class = "page_header"> Ajouter une séance </div>
+		<div class = "page_content">
 		<?php
 		if (!empty($_POST)){
 
@@ -57,6 +57,8 @@
 		}
 	?>
 	
-	<br><a href = "ajout_seance.php"> Retour </a> 
+	<br><a href = "ajout_seance.php"> Retour </a>
+	</div>
+	<div class = "page_footer"></div> 
 	</body>
 </html>

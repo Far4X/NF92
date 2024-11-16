@@ -1,9 +1,12 @@
 body  {
-
- 
-
   background : #DDDDDD;
-  padding : 5%;
+  padding : 0%;
+  margin : 0;
+  display : flex;
+  flex-direction: column;
+  min-height:100vh;
+
+
 }
 
 .error {
@@ -27,4 +30,40 @@ div#center_name {
 	background-color : #000000;
 	font : bold;
 	font-size : 30px;
+} 
+
+div.page_content {
+	margin : 0;
+	padding : 5%;
+	flex: 1;
 }
+
+div.page_footer {
+	margin :0;
+	padding : 1%;
+	height : 3%;
+	background-color : #145E5B;
+}
+
+div.page_header {
+	margin : 0%;
+	font-size : 30;
+	align-content: center;	
+	text-align : center;
+	background-color : #E0B940;
+	color : #101040;
+	height : 90px;
+	font-weight : bold;
+	
+}
+
+h1 {
+	margin : 0%;
+	padding : auto;
+	vertical-align : middle;
+	text-align : center;
+	background-color : #E0B940;
+	color : #101040;
+	height : 10%;
+}
+

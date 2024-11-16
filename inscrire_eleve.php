@@ -5,8 +5,9 @@
 		<title>Inscription d'un élève à une séance</title>
 	</head>
 	<body>
-		<h1>Inscription d'un élève à une séance</h1>
-		<?php
+		<div class = "page_header">inscription d'un élève à une séance</div>
+		<div class = "page_content">			
+<?php
 			$dbhost = "tuxa.sme.utc";
 			$dbuser = "nf92a065";
 			$dbpass = "ghdLQ90Fv3fr";
@@ -18,21 +19,24 @@
 			$query = "SELECT * FROM inscriptions WHERE idseance = '".$idseance."' AND ideleve = '".$ideleve."'";
 			$result = mysqli_query($connect, $query);
 			if (mysqli_num_rows($result) == 0){
-				$query = "SELECT capacite FROM seance WHERE idSeance = '".$idseance."'";
-				$capa = $mysqli_fect_row(mysqli_query($connect, $query));
+				$query = "SELECT EffMax FROM seances WHERE idSeance = '".$idseance."'";
+				$capa = mysqli_fetch_row(mysqli_query($connect, $query))[0];
 
 
 				$query = "SELECT COUNT(*) FROM eleves el
 						JOIN inscriptions insc ON insc.idEleve = el.idEleve
-						JOIN seance se ON insc.idSeance = se.idSeance
+						JOIN seances se ON insc.idSeance = se.idSeance
 						WHERE se.idSeance = '".$idseance."'";
-				if (mysqli_fetch_row(mysqli_query($connect, $query))[0] < $capa){
 				
-					$query = "INSERT INTO inscriptions (`idseance`, `ideleve`, `note`) VALUES ('".$ideleve."', '".$idseance."', -1)";
+
+				if (mysqli_fetch_row(mysqli_query($connect, $query))[0]< $capa){
+
+					$query = "INSERT INTO inscriptions (`idseance`, `ideleve`, `note`) VALUES ('".$idseance."', '".$ideleve."', -1)";
+					mysqli_query($connect, $query);
 					printf("L'élève a bien été ajouté à la séance"); //Si tps : mettre nom el et th + date sc + check si max capa a déjà été atteint
 				}
 				else {
-					printf("</div class='error'>La capacité maximale de cette séance a dékà été atteinte !</div>");
+					printf("<div class='error'>La capacité maximale de cette séance a déjà été atteinte !</div>");
 				}
 
 			}
@@ -41,6 +45,8 @@
 			}
 
 			mysqli_close($connect);	
-		?>
+?>
+		</div>
+		<div class = "page_footer"></div>
 	</body>
 </html>

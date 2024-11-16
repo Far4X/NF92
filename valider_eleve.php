@@ -5,8 +5,8 @@
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
-		<h1> Ajouter un élève </h1>
-		
+		<div class = "page_header"> Ajouter un élève </div>
+		<div class = "page_content">		
 		<?php
 		if ($_POST["valider"] == "Oui"){
 			
@@ -32,6 +32,9 @@
 		
 		}
 
-		?>
+?>
+
+	</div>
+	<div class = "page_footer"></div>
 	</body>
 </html>

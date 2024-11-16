@@ -5,8 +5,8 @@
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
-		<h1> Ajouter un élève </h1>
-
+		<div class = "page_header"> Ajouter un élève </div>
+		<div class = "page_content">
 		<?php
 		$l_name = $_POST["l_name"];
 		$f_name = $_POST["f_name"];
@@ -60,5 +60,7 @@
 	?>
 	
 	<br><a href = "ajout_eleve.html"> Retour </a> 
+	</div>
+	<div class = "page_footer"></div>
 	</body>
 </html>

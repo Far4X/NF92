@@ -5,8 +5,8 @@
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
 	<body>
-		<h1> Ajouter un thème </h1>
-
+		<div class = "page_header"> Ajouter un thème </div>
+		<div class = "page_content">
 		<?php
 		$name = $_POST["name"];
 		$desc = $_POST["desc"];
@@ -33,6 +33,8 @@
 		}
 	?>
 	
-	<br><a href = "ajout_theme.html"> Retour </a> 
+		<br><a href = "ajout_theme.html"> Retour </a> 
+		</div>
+		<div class = "page_footer"></div>
 	</body>
 </html>
