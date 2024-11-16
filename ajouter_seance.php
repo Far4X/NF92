@@ -42,7 +42,6 @@
 
 				mysqli_set_charset($connect, 'utf8');
 				$result = mysqli_query($connect, "SELECT * FROM seances WHERE `DateSeance` = '".$date."' AND `Idtheme` = '".$theme."'");
-
 				if (mysqli_fetch_array($result, MYSQLI_NUM)){
 					printf("Impossible d'ajouter la séance, une sur le même thème et le même jour est déjà programmée.");
 				}
