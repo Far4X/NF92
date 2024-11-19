@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Valider séance</title>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <div class = "page_header">Valider séance</div>
+        <div class = "page_content">
+            <?php
+                
+            $dbhost = "tuxa.sme.utc";
+            $dbuser = "nf92a065";
+            $dbpass = "ghdLQ90Fv3fr";
+            $dbname = "nf92a065";
+
+            $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+            $num_el = $_POST["nbeleves"];
+            $i = 0;
+            $seance = $_POST["idseance"];
+            while ($i < $num_el){
+                $el = "el".$i;
+                $current_el_id = $_POST($el);
+                $current_el_nbfautes = $_POST($eli."note");
+                if (!empty($current_el_nbfautes) && $current_el_nbfautes != -1){
+                    $note = (40 - $current_el_nbfautes)/2;
+                    $query = "UPDATE inscriptions SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$current_el_id."''";
+                    mysqli_query($connect, $query);
+                }
+            }
+
+            ?>
+        </div>
+
+        <div class = "page_footer">
+            <?php
+                date_default_timezone_setdate_default_timezone_set("Europe/Paris");
+                printf("Page générée le %s", date("Y\-m\-d"));
+            ?>
+        </div>
+    </body>
+
+</html>
