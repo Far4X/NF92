@@ -40,11 +40,25 @@
 
             $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
             //<!--TODO :  si un thème déjà ajouté mais supprimé entré : le réactiver-->
+            $query = "SELECT * FROM themes WHERE Nom = $name";
+            // echo $query;
 
-			$query = 'insert into themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) values (NULL, "'.$name.'", 0, "'.$desc.'");';
-			$rep = mysqli_query($connect, $query);
-			printf("Vous avez ajouté le thème %s", $name);
-			mysqli_close($connect);
+            $result = mysqli_query($connect, $query);
+            if ($row = mysqli_fetch_array($query)){
+                $query = "UPDATE themes SET `Supprime` = '0', `Descriptif` = '$desc' WHERE idTheme = $row[0]";
+                echo $query;
+                mysqli_query($connect, $query);
+                printf("Le thème existait déjà. Il a été réactivé si il était désactive et sa description a été mise à jour");
+            }
+            else {
+
+                $query = "INSERT INTO themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) VALUES (NULL, '$name', 0, '$desc');";
+                echo $query;
+
+                $rep = mysqli_query($connect, $query);
+                printf("Vous avez ajouté le thème %s", $name);
+            }
+            mysqli_close($connect);
 		}
 	?>
 	

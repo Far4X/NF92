@@ -14,16 +14,31 @@
                 $dbuser = "nf92a065";
                 $dbpass = "ghdLQ90Fv3fr";
                 $dbname = "nf92a065";
-                
+
+
                 $query = "UPDATE themes SET `Supprime` = '1' WHERE idTheme = $to_supress";
                 //echo $query;
                 $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-                mysqli_query($connect, $query);
 
-            
-                
+
+                mysqli_query($connect, $query);
+                date_default_timezone_set("Europe/Paris");
+
+                $query = "SELECT idSeance FROM seances WHERE DateSeance >= ".date("Y\-m\-d")." AND idTheme = '$to_supress'";
+                echo $query;
+                $result = mysqli_query($connect, $query);
+                while ($row = mysqli_fetch_array($result)){
+                    $query = "DELETE FROM inscriptions WHERE idseance = $row[0]";
+                    mysqli_query($connect, $query);
+                    $query = "DELETE FROM seance WHERE idSeance = $row[0]";
+                    mysqli_query($connect, $query);
+                    
+
+                }
+
+                mysqli_close($connect);
             ?>  
-            Thème suppimé avec succès ! <br><hr>
+            Thème et séances futures liées à ce thème supprimés avec succès ! <br><hr>
             <a href = "suppression_theme.php">Supprimer un autre thème</a><br>
             <a href = "accueil.html"> Retour à l'accueil</a>
         </div>
