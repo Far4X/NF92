@@ -10,7 +10,19 @@
 		<?php
 		$l_name = $_POST["l_name"];
 		$f_name = $_POST["f_name"];
-		$bday = $_POST["date_bd"];
+        $bday = $_POST["date_bd"];
+            
+        if (str_contain($l_name, '"') || str_contain($l_name, '<') ||str_contain($l_name, "'")){
+            printf("<div class = 'error'>Caratère non autorisé dans le nom");
+            die();
+        }
+
+        if (str_contain($f_name, '"') || str_contain($f_name, '<') ||str_contain($f_name, "'")){
+            printf("<div class = 'error'>Caratère non autorisé dans le prénom");
+            die();
+        }
+
+
 		date_default_timezone_set('Europe/Paris');
 		$tddate = date("Y\-m\-d");
 		printf("Requête analysée le %s <br><br>", $tddate);

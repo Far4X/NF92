@@ -11,7 +11,7 @@
 			$dbhost = "tuxa.sme.utc";
 			$dbuser = "nf92a065";
 			$dbpass = "ghdLQ90Fv3fr";
-			$dbname = "nf92a065";
+			$dbname = "nf92a065";    
 			
 			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
 			$ideleve = $_POST["ideleve"];

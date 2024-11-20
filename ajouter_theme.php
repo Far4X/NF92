@@ -9,7 +9,21 @@
 		<div class = "page_content">
 		<?php
 		$name = $_POST["name"];
-		$desc = $_POST["desc"];
+        $desc = $_POST["desc"];
+
+        
+        if (strpos($name, '"') || strpos($name, '<') ||strpos($name, "'")){
+            printf("<div class = 'error'>Caratère non autorisé dans le nom");
+            die();
+            
+        }
+
+        if (strpos($desc, '"') || strpos($desc, '<') ||strpos($desc, "'")){
+            printf("<div class = 'error'>Caratère non autorisé dans le nom");
+            die();
+        }
+
+
 		printf("Requête analysée");
 		if (empty($name)){
 			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité.</div>");
@@ -24,7 +38,8 @@
 			$dbpass = "ghdLQ90Fv3fr";
 			$dbname = "nf92a065";
 
-			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
+            $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
+            //<!--TODO :  si un thème déjà ajouté mais supprimé entré : le réactiver-->
 
 			$query = 'insert into themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) values (NULL, "'.$name.'", 0, "'.$desc.'");';
 			$rep = mysqli_query($connect, $query);
