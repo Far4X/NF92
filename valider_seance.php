@@ -21,31 +21,33 @@
                 $query = "SELECT el.nom, el.idEleve, el.prenom, ins.note FROM eleves AS el
                         JOIN inscriptions AS ins ON el.idEleve = ins.ideleve WHERE ins.idSeance = '".$seance."'";
                 $result = mysqli_query($connect, $query);
-                if (mysqli_num_rows($result) = 0){
+                if (mysqli_num_rows($result) == 0){
                     printf("<div class = 'error'>Aucun élève inscrit à cette séance</div>");
                 }
                 else {
                     echo "<form method = 'POST' action = 'noter_eleves'>";
-                    echo "<table border = '2'>";
+                    echo "<table border = '0'>";
                     echo "<tr><td>Nom</td><td>Prénom</td><td>Nombre de fautes</td></tr>";
                     $i = 0;
                     printf("<input type = 'hidden' name = 'nbeleves' value = '%s'>", mysqli_num_rows($result));
                     printf("<input type = 'hidden' name = 'idseance' value = '%s'>", $seance);
                     while ($row = mysqli_fetch_array($result)){
-                        printf("<tr><td>%s<input type='hidden' name = 'el%s' value = '%s'></td><td>%s</td><td><input type = 'number' name = 'el%snote' value = '%s'></td></tr>", $row[0], $i, $row[1], $row[2], $i, ($row[3] != -1) ? $row[3] : "");
+                        printf("<tr><td>%s<input type='hidden' name = 'el%s' value = '%s'></td><td>%s</td><td><input type = 'number' name = 'el%snote' value = '%s' max = '40' min = '0'></td></tr>", $row[0], $i, $row[1], $row[2], $i, ($row[3] != -1) ? (40 - 2*$row[3]) : "");
                         $i += 1;
                     }
-                    echo "</table><input type = 'submit' value = 'Envoyer'>"
+                    echo "</table><br><input type = 'submit' value = 'Envoyer'>";
                 } ?>
 
             </form>
-
-            <a href = "acceuil.html" target = "content">Retour à l'acceuil</a>
+		<br>
+	    <a href = "accueil.html" target = "content">Retour à l'acceuil</a>
+	    <br>
+            <a href = "validation_seance.php" target = "content">Valider une autre séance</a>
 
         </div>
         <div class = "page_footer">
             <?php
-            date_default_timezone_setdate_default_timezone_set("Europe/Paris");
+            date_default_timezone_set("Europe/Paris");
             printf("Page générée le %s", date("Y\-m\-d"));
             ?>
             

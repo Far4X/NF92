@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Valider séance</title>
-        <meta charset = "utf-8">
+	<meta charset = "utf-8">
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
         <div class = "page_header">Valider séance</div>
@@ -19,21 +20,26 @@
             $seance = $_POST["idseance"];
             while ($i < $num_el){
                 $el = "el".$i;
-                $current_el_id = $_POST($el);
-                $current_el_nbfautes = $_POST($eli."note");
+                $current_el_id = $_POST[$el];
+                $current_el_nbfautes = $_POST[$el."note"];
                 if (!empty($current_el_nbfautes) && $current_el_nbfautes != -1){
                     $note = (40 - $current_el_nbfautes)/2;
-                    $query = "UPDATE inscriptions SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$current_el_id."''";
-                    mysqli_query($connect, $query);
-                }
-            }
+                    $query = "UPDATE inscriptions SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$current_el_id."'";
+		    
+		    mysqli_query($connect, $query);
+		}
 
-            ?>
+		$i++;
+            }
+	    printf("%s notes ont été entrées avec succès !", $i);
+	?>
+	    <br><a href = "validation_seance.php" target = "content">Valider une nouvelle séance </a><br>
+	    <a href = "accueil.html" target = "content">Retour vers l'accueil</a>
         </div>
 
         <div class = "page_footer">
             <?php
-                date_default_timezone_setdate_default_timezone_set("Europe/Paris");
+                date_default_timezone_set("Europe/Paris");
                 printf("Page générée le %s", date("Y\-m\-d"));
             ?>
         </div>
