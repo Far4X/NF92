@@ -2,13 +2,13 @@
 <html>
     <head>
         <title> Supprimer un thème </title>
-        <link rel = "style.css" type = "text/css" href = "style.css">
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
         <meta charset = "utf-8">
     </head>
     <body>
         <div class = "page_header"> Supprimer un thème </div>
         <div class = "page_content"> 
-            Veuillez sélectionner le thème à supprimer :
+	    Veuillez sélectionner le thème à supprimer : <br>
             <form method = "POST" action = "supprimer_theme.php">
                 <table border = "0">
                     <tr> <td> Nom du thème </td> <td> Supprimer </td> </tr>
@@ -26,7 +26,7 @@
                     $result = mysqli_query($connect, $query);
 
                     while($row = mysqli_fetch_array($result)){
-                        printf("<tr><td>%s</td><td><input type = 'radio' name = 'target' value = '%s'></td></tr>", $row[1], $row[2]);
+                        printf("<tr><td>%s</td><td><input type = 'radio' name = 'target' value = '%s'></td></tr>", $row[1], $row[0]);
 
                     }
 

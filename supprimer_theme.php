@@ -1,7 +1,7 @@
 <html>
     <head>
         <title> Supprimer un thème </title>
-        <link rel = "style.css" type = "text/css" href = "style.css">
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
         <meta charset = "utf-8">
     </head>
     <body>
@@ -16,14 +16,14 @@
                 $dbname = "nf92a065";
                 
                 $query = "UPDATE themes SET `Supprime` = '1' WHERE idTheme = $to_supress";
-                echo $query;
+                //echo $query;
                 $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
                 mysqli_query($connect, $query);
 
             
                 
             ?>  
-            Thème suppimé avec succès ! <br>
+            Thème suppimé avec succès ! <br><hr>
             <a href = "suppression_theme.php">Supprimer un autre thème</a><br>
             <a href = "accueil.html"> Retour à l'accueil</a>
         </div>
