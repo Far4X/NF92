@@ -30,7 +30,7 @@
                 while ($row = mysqli_fetch_array($result)){
                     $query = "DELETE FROM inscriptions WHERE idseance = $row[0]";
                     mysqli_query($connect, $query);
-                    $query = "DELETE FROM seance WHERE idSeance = $row[0]";
+                    $query = "DELETE FROM seances WHERE idSeance = $row[0]";
                     mysqli_query($connect, $query);
                     
 

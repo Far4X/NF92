@@ -46,7 +46,7 @@
 
 			mysqli_close($connect);	
 ?>
-			<br><a href = "inscrire_eleve.php" target = "content">Inscrire un nouvel élève</a>  
+			<br><a href = "inscription_eleve.php" target = "content">Inscrire un nouvel élève</a>  
 			<br><a href = "accueil.html" target = "content">Retour à l'accueil</a>  
 		</div>
 		<div class = "page_footer">

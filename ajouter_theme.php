@@ -40,20 +40,20 @@
 
             $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
             //<!--TODO :  si un thème déjà ajouté mais supprimé entré : le réactiver-->
-            $query = "SELECT * FROM themes WHERE Nom = $name";
-            // echo $query;
+            $query = "SELECT * FROM themes WHERE `Nom` = '$name'";
+            //echo $query;
 
             $result = mysqli_query($connect, $query);
-            if ($row = mysqli_fetch_array($query)){
+            if ($row = mysqli_fetch_array($result)){
                 $query = "UPDATE themes SET `Supprime` = '0', `Descriptif` = '$desc' WHERE idTheme = $row[0]";
-                echo $query;
+                //echo $query;
                 mysqli_query($connect, $query);
-                printf("Le thème existait déjà. Il a été réactivé si il était désactive et sa description a été mise à jour");
+                printf("Le thème existait déjà.<br> Il a été réactivé si il était désactivé et sa description a été mise à jour.<br>");
             }
             else {
 
                 $query = "INSERT INTO themes (`idTheme`, `Nom`, `Supprime`, `Descriptif`) VALUES (NULL, '$name', 0, '$desc');";
-                echo $query;
+                //echo $query;
 
                 $rep = mysqli_query($connect, $query);
                 printf("Vous avez ajouté le thème %s", $name);
@@ -62,7 +62,9 @@
 		}
 	?>
 	
-		<br><a href = "ajout_theme.html"> Retour </a> 
+		<br><a href = "ajout_theme.html"> Ajouter d'autres thèmes</a> 
+		<br><a href = "accueil.html">Retour à l'accueil</a>
+
 		</div>
 		<div class = "page_footer"></div>
 	</body>
