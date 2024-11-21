@@ -11,7 +11,7 @@
             Veuillez sélectionner l'élève à consulter ci-dessous : 
             <hr>
             <form method = "POST" action = "consulter_eleve.php">
-                <select name = "ideleve">
+                <select name = "ideleve" size = "10">
                 <?php
                     $dbhost = "tuxa.sme.utc";
                     $dbuser = "nf92a065";

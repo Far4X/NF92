@@ -10,7 +10,7 @@
         <div class = "page_content">
             Voici les informations sur l'élève sélectionné :
             <hr>
-            <form method = "POST" action = "consulter_eleve.php">
+            
                 
                 <?php
                     $dbhost = "tuxa.sme.utc";
@@ -21,18 +21,18 @@
                     $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
                     $idEleve = $_POST["ideleve"];
-                    $query = "SELECT * FROM eleves WHERE idEleve = $";
-                    $result = mysqli_query($connect, $query);
+                    $query = "SELECT * FROM eleves WHERE idEleve = $idEleve";
+		    //echo $query."<br>";
+		    $result = mysqli_query($connect, $query);
 
                     if ($row = mysqli_fetch_array($result)){
-                        printf("%s %s, inscrit le %s, né le %s", row[1], row[2], row[4], row[3]);
+                        printf("%s %s, inscrit le %s, né le %s", $row[1], $row[2], $row[4], $row[3]);
                     }
 
                     mysqli_close($connect);
-                ?>
-                </select>
-                <input type = "submit" value = "Sélectionner">
-            </form>
+?>
+	    <br><a href = "consultation_eleve.php"> Consulter un autre élève </a>
+	    <br><a href = "accueil"> Retour au menu </a>
         </div>
 
         <div class = "page_footer">
