@@ -21,7 +21,7 @@
                     $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
                     $idEleve = $_POST["ideleve"];
-                    $query = "SELECT * FROM eleves WHERE idEleve = $";
+                    $query = "SELECT * FROM eleves WHERE idEleve = $idEleve";
                     $result = mysqli_query($connect, $query);
 
                     if ($row = mysqli_fetch_array($result)){
