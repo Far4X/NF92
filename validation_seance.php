@@ -24,7 +24,9 @@
 
 				$query = "SELECT sc.idSeance, sc.DateSeance, th.Nom FROM seances AS sc  
 				       JOIN themes AS th ON sc.IdTheme = th.idTheme  WHERE sc.DateSeance < '".$tddate."' ORDER BY sc.DateSeance DESC";
-				$result = mysqli_query($connect, $query); //Todo : mettre en rouge les séances pas complètement notées
+                echo $query;
+                
+                $result = mysqli_query($connect, $query); //Todo : mettre en rouge les séances pas complètement notées
 				echo "<form method = 'POST' action = 'valider_seance.php'>";	
 				echo "<select name = 'sc' size = '10'>";
 
