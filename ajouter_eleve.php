@@ -12,12 +12,12 @@
 		$f_name = $_POST["f_name"];
         $bday = $_POST["date_bd"];
             
-        if (str_contain($l_name, '"') || str_contain($l_name, '<') ||str_contain($l_name, "'")){
+        if (strpos($l_name, '"') || strpos($l_name, '<') || strpos($l_name, "'")){
             printf("<div class = 'error'>Caratère non autorisé dans le nom");
             die();
         }
 
-        if (str_contain($f_name, '"') || str_contain($f_name, '<') ||str_contain($f_name, "'")){
+        if (strpos($f_name, '"') || strpos($f_name, '<') || strpos($f_name, "'")){
             printf("<div class = 'error'>Caratère non autorisé dans le prénom");
             die();
         }
