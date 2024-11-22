@@ -40,8 +40,8 @@
                 echo "<form method = 'POST' action = 'desinsrire_seance.php'><select name = 'id_eleve' size = '10'>";
 
                 
-                $query = "SELECT idEleve, el.nom, el.prenom FROM eleves AS el 
-                    JOIN inscriptions AS ins ON ins.ideleve = el.ideleve
+                $query = "SELECT el.idEleve, el.nom, el.prenom FROM eleves AS el 
+                    JOIN inscriptions AS ins ON ins.ideleve = el.idEleve
                 WHERE ins.idseance = $seance";
                 //echo $query;
 

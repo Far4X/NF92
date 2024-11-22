@@ -16,13 +16,24 @@
                 $id_eleve = $_POST["id_eleve"];
                 $id_seance = $_POST["id_seance"];
 
-                $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+                $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
                 $query = "SELECT nom, prenom FROM eleves WHERE idEleve = '$id_eleve'";
                 //echo $query;
                 $eleve = mysqli_fetch_array(mysqli_query($connect, $query));
                 $query = "SELECT DateSeance FROM seances WHERE idSeance = '$id_seance'";
                 //echo $query;
+                $seance = mysqli_fetch_array(mysqli_query($connect, $query));
 
+                if (!(is_numeric($id_eleve))||!(is_numeric($id_seance))){
+                    echo "<div class = 'Error'>Les entrées reçues ne sont pas des entiers</div>";
+                    die();
+                }
+
+                
+                $query = "DELETE FROM inscriptions WHERE `ideleve` = '$id_eleve' AND `idseance` = '$id_seance'";
+                echo $query;//TODO:Test
+
+                mysqli_query($connect, $query);
                 mysqli_close($connect);
             ?>
         </div>

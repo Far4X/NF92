@@ -22,6 +22,7 @@
 				date_default_timezone_set("Europe/Paris");
 				$tddate = date("Y\-m\-d");
 
+            
 				$query = "SELECT sc.idSeance, sc.DateSeance, th.Nom FROM seances AS sc  
 				       JOIN themes AS th ON sc.IdTheme = th.idTheme  WHERE sc.DateSeance < '".$tddate."' ORDER BY sc.DateSeance DESC";
                 echo $query;
