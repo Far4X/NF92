@@ -21,8 +21,9 @@
 
 			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
 			date_default_timezone_set("Europe/Paris");
-			$query = "insert into eleves (`idEleve`, `nom`, `prenom`, `dateNaissance`, `dateInscription`) values (NULL, '".$l_name."', '".$f_name."', '".$bday."', '".date("Y\-m\-d")."');";
-			mysqli_query($connect, $query);
+			$query = "INSERT INTO eleves (`idEleve`, `nom`, `prenom`, `dateNaissance`, `dateInscription`) VALUES (NULL, '$l_name', '$f_name', '$bday', '".date("Y\-m\-d")."');";
+            //echo $query;
+            mysqli_query($connect, $query);
 			printf("<div class=infobox>L'élève %s %s a bien été ajouté.</div>", $f_name, $l_name);
 
 

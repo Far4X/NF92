@@ -24,8 +24,16 @@
                 echo "<form method = 'POST' action = 'desinscription_eleve'>";
                 echo "<select size = '4' name = 'id_seance'>";
                  
-                $query = "SELECT * FROM seances AS sc WHERE sc.DateSeance >= ".date("Y\-m\-d")." AND 
-                    (SELECT COUNT(*) FROM inscriptions AS ins WHERE ins.idseance = sc.idSeance) > 0";
+                $query = "SELECT sc.idSeance, sc.DateSeance, th.Nom FROM seances AS sc WHERE sc.DateSeance >= ".date("Y\-m\-d")." AND 
+            (SELECT COUNT(*) FROM inscriptions AS ins WHERE ins.idseance = sc.idSeance) > 0
+                JOIN themes AS th ON th.idTheme = sc.IdTheme";
+                echo $query;
+                
+                $result = mysqli_query($connect, $query);
+                while ($row = mysqli_fetch_array($result)){
+                    printf("<option value = %s>Séance du %s sur le thème %s", $row[0], $row[1], $row[2]);
+                }
+                echo "</select><br><input type = 'submit' value = 'Envoyer'></form>";
 
             }
 

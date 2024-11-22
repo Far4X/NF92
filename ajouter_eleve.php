@@ -12,12 +12,12 @@
 		$f_name = $_POST["f_name"];
         $bday = $_POST["date_bd"];
             
-        if (strpos($l_name, '"') !== false || strpos($l_name, '<') !== false || strpos($l_name, "'")!== false){
+        if (strpos($l_name, ';') !== false || strpos($l_name, '<') !== false){
             printf("<div class = 'error'>Caratère non autorisé dans le nom");
             die();
         }
 
-        if (strpos($f_name, '"') !== false || strpos($f_name, '<') !== false || strpos($f_name, "'") !== false){
+        if (strpos($f_name, ';') !== false || strpos($f_name, '<') !== false){
             printf("<div class = 'error'>Caratère non autorisé dans le prénom");
             die();
         }
@@ -42,11 +42,12 @@
 			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
 			mysqli_set_charset($connect,'utf8');
 			
-			$query = "select * from eleves WHERE `nom` = '".$l_name."' AND  `prenom` = '".$f_name."'";
+            $query = "SELECT * FROM eleves WHERE `nom` = '$l_name' AND  `prenom` = '$f_name'";
+            //echo $query;
 			$result = mysqli_query($connect, $query);
 
 			if (mysqli_num_rows($result) == 0){
-				$query = 'insert into eleves (`idEleve`, `nom`, `prenom`,`dateNaissance`,`dateInscription`) values (NULL, "'.$l_name.'", "'.$f_name.'", "'.$bday.'", "'.$tddate.'")';
+				$query = "INSERT INTO eleves (`idEleve`, `nom`, `prenom`,`dateNaissance`,`dateInscription`) VALUES (NULL, '$l_name', '$f_name', '$bday', '$tddate')";
 				echo $query.'<br>';
 				mysqli_query($connect, $query);
 				printf("Vous avez ajouté %s %s, né(e) le %s.", $f_name, $l_name, $bday);

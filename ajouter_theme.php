@@ -12,13 +12,13 @@
         $desc = $_POST["desc"];
 
         
-        if (strpos($name, '"') !== false || strpos($name, '<') !== false ||strpos($name, "'") !== false){
+        if (strpos($name, ';') !== false || strpos($name, '<') !== false){
             printf("<div class = 'error'>Caratère non autorisé dans le nom");
             die();
             
         }
 
-        if (strpos($desc, '"') !== false || strpos($desc, '<') !== false ||strpos($desc, "'") !== false){
+        if (strpos($desc, ';') !== false || strpos($desc, '<') !== false){
             printf("<div class = 'error'>Caratère non autorisé dans le nom");
             die();
         }
