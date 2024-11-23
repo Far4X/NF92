@@ -9,7 +9,7 @@
         <div class = "page_content">
 
             Choisissez l'élève dont vous voulez visualiser le calendrier :<hr>
-            <form method = "POST" action = "visualiser_calendrier.php">
+            <form method = "POST" action = "visualiser_calendrier_eleve.php">
                 <select size = '10' name = 'id_eleve'>
                     <?php
                         $dbhost = "tuxa.sme.utc";
@@ -23,7 +23,7 @@
                         $result = mysqli_query($connect, $query);
 
                         while($row = mysqli_fetch_array($result)){
-                            printf("<select value = '%s'>%s %s</option>", $row[0], $row[1], $row[2]);
+                            printf("<option value = '%s'>%s %s</option>", $row[0], $row[1], $row[2]);
                         }
                         mysqli_close($connect);
                     ?>
