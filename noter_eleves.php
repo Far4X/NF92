@@ -21,7 +21,7 @@
             //echo $query;
             $result = mysqli_query($connect, $query);
 
-            while ($row = mysqli_fetch_array($query)){
+            while ($row = mysqli_fetch_array($result)){
                 $current_el_nbfautes = $_POST["el".$row[0]."note"];
                 if ($current_el_nbfautes != -1 ){ //empty($current_el_nbfautes)
                     $note = (40 - $current_el_nbfautes)/2;
