@@ -28,15 +28,17 @@
                     echo "<form method = 'POST' action = 'noter_eleves'>";
                     echo "<table border = '0'>";
                     echo "<tr><td>Nom</td><td>Prénom</td><td>Nombre de fautes</td></tr>";
-                    $i = 0;
-                    printf("<input type = 'hidden' name = 'nbeleves' value = '%s'>", mysqli_num_rows($result));
+
+
                     printf("<input type = 'hidden' name = 'idseance' value = '%s'>", $seance);
                     while ($row = mysqli_fetch_array($result)){
-                        printf("<tr><td>%s<input type='hidden' name = 'el%s' value = '%s'></td><td>%s</td><td><input type = 'number' name = 'el%snote' value = '%s' max = '40' min = '0'></td></tr>", $row[0], $i, $row[1], $row[2], $i, ($row[3] != -1) ? (40 - 2*$row[3]) : "");
-                        $i += 1;
+                        printf("<tr><td>%s</td><td>%s</td><td><input type = 'number' name = 'el%snote' value = '%s' max = '40' min = '0'></td></tr>", $row[0], $row[2], $row[1], ($row[3] != -1) ? (40 - 2*$row[3]) : "");
+                        
                     }
                     echo "</table><br><input type = 'submit' value = 'Envoyer'>";
-                } ?>
+                } 
+                mysqli_close($connect);
+                ?>
 
             </form>
 		<br>
