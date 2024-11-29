@@ -17,12 +17,14 @@
             $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
             $num_el = $_POST["nbeleves"];
             $i = 0;
-            $seance = $_POST["idseance"];
+	    $seance = $_POST["idseance"];
+	    //TODO: Repasser par l'id des élèves. Pas de compteur.
+	    $query = "SELECT el.ideleve FROM eleves AS el JOIN inscriptions AS ins ON el.ideleve = ins.idEleve WHERE ins.idSeance = $seance";
             while ($i < $num_el){
                 $el = "el".$i;
                 $current_el_id = $_POST[$el];
                 $current_el_nbfautes = $_POST[$el."note"];
-                if (!empty($current_el_nbfautes) && $current_el_nbfautes != -1){
+                if ($current_el_nbfautes != -1){ //empty($current_el_nbfautes)
                     $note = (40 - $current_el_nbfautes)/2;
                     $query = "UPDATE inscriptions SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$current_el_id."'";
 		    

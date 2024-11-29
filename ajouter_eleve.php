@@ -33,6 +33,9 @@
 		
 			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité. Un des noms est trop long.</div>");
 		}
+		else if ($bday > $tddate){
+			printf("<div class = 'error'>Mauvaise requête. La date n'est pas valide.</div>");
+		}
 		else {
 			$dbuser = "nf92a065";
 			$dbhost = "tuxa.sme.utc";
@@ -62,11 +65,7 @@
 				printf("<input type = 'hidden' value = '%s' name = 'f_name'>", $f_name);
 				printf("<input type = 'hidden' value = '%s' name = 'l_name'>", $l_name);
 				printf("<input type = 'hidden' value = '%s' name = 'bday'>", $bday);
-				echo "<br><input type = 'submit' value = 'Oui' name = 'valider'>   <input type = 'submit' value = 'Non' name = 'valider'>";
-			
-
-				
-
+				echo "<br><input type = 'submit' value = 'Oui' name = 'valider'>   <input type = 'submit' value = 'Non' name = 'valider'>";				
 			}
 		mysqli_close($connect);
 		}

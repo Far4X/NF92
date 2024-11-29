@@ -21,7 +21,7 @@
             $query = "SELECT ins.note, sc.DateSeance, th.Nom FROM inscriptions AS ins 
                 JOIN seances AS sc ON ins.idseance = sc.idSeance
                 JOIN themes AS th ON th.idTheme = sc.idTheme
-                    WHERE sc.DateSeance <= '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";
+                    WHERE sc.DateSeance < '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";
             //echo $query;
             echo "Séances passées : ";
             //TODO: mettre moyenne des séances 
@@ -42,7 +42,7 @@
             $query = "SELECT sc.DateSeance, th.Nom FROM inscriptions AS ins 
                 JOIN seances AS sc ON ins.idseance = sc.idSeance
                 JOIN themes AS th ON th.idTheme = sc.idTheme
-		    WHERE sc.DateSeance > '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";
+		    WHERE sc.DateSeance >= '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";
 	    //echo $query;
 
             $result = mysqli_query($connect, $query);
