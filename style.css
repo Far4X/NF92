@@ -66,3 +66,23 @@ h1 {
 	height : 10%;
 }
 
+table {
+	background-color : #DDDDDD;
+	padding : 0%;
+	margin : 2%;
+	border : 4px solid #2266BB;
+	border-collapse : collapse;
+	
+}
+
+td {
+	border : 2px solid lightblue;
+	padding : 15px;
+}
+
+tbody tr:nth-child(odd) {
+	background-color : #3377DD;
+}
+tbody tr:nth-child(even){
+	background-color : #2266BB;
+}

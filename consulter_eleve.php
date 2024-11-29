@@ -5,7 +5,8 @@
         <title>Consulter un élève</title>
     </head>
     <body>
-        <script link = "script.js"></script> <div class = "page_header">Consulter un élève</div>
+	<script src = "script.js" defer></script> 
+	<div class = "page_header">Consulter un élève</div>
 
         <div class = "page_content">
             Voici les informations sur l'élève sélectionné :

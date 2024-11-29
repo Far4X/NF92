@@ -7,7 +7,7 @@
     <body>
         <!-- Pas de RQST si pas chgt note -->
         
-        <script link = "script.js"></script>
+        <script src = "script.js" defer></script>
         <div class = "page_header">Valider une séance</div>
         <div class = "page_content">
             <form method = "POST" action = "noter_eleves.php">

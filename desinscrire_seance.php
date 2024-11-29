@@ -5,7 +5,8 @@
         <title> Désinscrire un élève d'une séance</title>
     </head>
     <body>
-        <div class = "page_header"> Désinscrire un élève d'une séance</div>
+	<div class = "page_header"> Désinscrire un élève d'une séance</div>
+	<script src = "script.js" defer></script>
         <div class = "page_content"> 
             <?php
                 $dbhost = "tuxa.sme.utc";
@@ -31,11 +32,13 @@
 
                 
                 $query = "DELETE FROM inscriptions WHERE `ideleve` = '$id_eleve' AND `idseance` = '$id_seance'";
-                echo $query;//TODO:Test
-
+                //echo $query;//TODO:Test
+		echo "L'élève a bien été désinscrit";
                 mysqli_query($connect, $query);
                 mysqli_close($connect);
-            ?>
+		?>
+		<br><a href = "desinscription_seance.php" target = "content">Désinscrire un autre élève</a>
+		<br><a href = "accueil.html" target = "content" onclick = "changeColors('acc_div');">Retour à l'accueil</a>
         </div>
         <div class = "page_footer">
             <?php

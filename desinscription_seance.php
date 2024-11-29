@@ -22,7 +22,7 @@
             if (empty($_POST["id_seance"])){
                 echo "Veuillez sélectionner une séance (seules les séances avec un ou plusieurs inscrit sont renseignées) : <hr>";
                 $query = "SELECT sc.idSeance, sc.DateSeance, th.Nom FROM seances AS sc JOIN themes AS th ON th.idTheme = sc.IdTheme WHERE sc.DateSeance >= '".date("Y\-m\-d")."' AND (SELECT COUNT(*) FROM inscriptions AS ins WHERE ins.idseance = sc.idSeance) > 0";
-                echo $query;
+                //echo $query;
                 echo "<form method = 'POST' action = 'desinscription_seance.php'>";
                 echo "<select size = '4' name = 'id_seance'>";
                  
@@ -31,7 +31,7 @@
                 while ($row = mysqli_fetch_array($result)){
                     printf("<option value = %s>Séance du %s sur le thème %s", $row[0], $row[1], $row[2]);
                 }
-                echo "</select><br><input type = 'submit' value = 'Envoyer'></form>";
+                echo "</select><br><hr><input type = 'submit' value = 'Envoyer'></form>";
             }
             else {
                 $seance = $_POST["id_seance"];
@@ -50,7 +50,7 @@
                 while ($row = mysqli_fetch_array($result)){
                     printf("<option value = '%s'>%s %s</option>", $row[0], $row[1], $row[2]);
                 }
-                echo "</select><br><br><input type = 'submit' value = 'Envoyer'></form>";
+                echo "</select><br><hr><input type = 'submit' value = 'Envoyer'></form>";
             }
 
             mysqli_close($connect);

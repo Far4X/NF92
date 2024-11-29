@@ -7,7 +7,7 @@
     <body>
         <div class = "page_header"> Supprimer un thème </div>
 
-        <script link = "script.js"></script>
+        <script src = "script.js" defer></script>
         <div class = "page_content"> 
             <?php
                 $to_supress = $_POST["target"];

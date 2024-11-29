@@ -5,7 +5,7 @@
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
-        <script link = "script.js"></script>
+        <script src = "script.js" defer></script>
         <div class = "page_header"> Visualiser le calendrier d'un élève</div>
         <div class = "page_content">
             Voici le calendrier de l'élève sélectionné : <hr>

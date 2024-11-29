@@ -14,9 +14,9 @@
 		
 		<table border = 0> 
 		
-			<tr><td>Effectif de la séance :<td/><td><input type = "number" min = "1" value = "1" name = "eff" required></td></tr>			
-			<tr><td>Date de la séance : <td/><td><input type = "date" name = "date" required></td></tr>			
-			<tr><td>Thème : </td><td></td><td><select name = "id_theme" >	
+			<tr><td>Effectif de la séance :</td><td><input type = "number" min = "1" value = "1" name = "eff" required></td></tr>			
+			<tr><td>Date de la séance : </td><td><input type = "date" name = "date" required></td></tr>			
+			<tr><td>Thème : </td><td><select name = "id_theme" >	
 			<?php
 				$dbhost = "tuxa.sme.utc";
 				$dbuser = "nf92a065";

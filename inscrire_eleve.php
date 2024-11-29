@@ -6,7 +6,7 @@
 	</head>
     <body>
 
-        <script link = "script.js"></script>
+        <script src = "script.js" defer></script>
 		<div class = "page_header">Inscription d'un élève à une séance</div>
 		<div class = "page_content">			
 <?php
