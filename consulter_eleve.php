@@ -5,7 +5,7 @@
         <title>Consulter un élève</title>
     </head>
     <body>
-        <div class = "page_header">Consulter un élève</div>
+        <script link = "script.js"></script> <div class = "page_header">Consulter un élève</div>
 
         <div class = "page_content">
             Voici les informations sur l'élève sélectionné :
@@ -32,7 +32,7 @@
                     mysqli_close($connect);
                 ?>
             <br><a href = "consultation_eleve.php"> Consulter un autre élève </a>
-            <br><a href = "accueil"> Retour au menu </a>
+            <br><a href = "accueil" target = "content" onclick = "changeColors('acc_div')"> Retour au menu </a>
         </div>
 
         <div class = "page_footer">

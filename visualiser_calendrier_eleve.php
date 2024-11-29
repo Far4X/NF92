@@ -5,6 +5,7 @@
         <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
+        <script link = "script.js"></script>
         <div class = "page_header"> Visualiser le calendrier d'un élève</div>
         <div class = "page_content">
             Voici le calendrier de l'élève sélectionné : <hr>
@@ -56,7 +57,7 @@
             mysqli_close($connect);
             ?>
             <br><a href = "visualisation_calendrier_eleve.php"> Visualiser un autre calendrier d'élève </a><br>
-            <a href = "accueil.html">Retour à l'accueil</a>
+            <a href = "accueil.html" target = "content" onclick = "changeColors('acc_div')">Retour à l'accueil</a>
         </div>
         <div class = "page_footer">
             <?php

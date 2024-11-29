@@ -4,7 +4,9 @@
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 		<title>Inscription d'un élève à une séance</title>
 	</head>
-	<body>
+    <body>
+
+        <script link = "script.js"></script>
 		<div class = "page_header">Inscription d'un élève à une séance</div>
 		<div class = "page_content">			
 <?php
@@ -47,7 +49,7 @@
 			mysqli_close($connect);	
 ?>
 			<br><a href = "inscription_eleve.php" target = "content">Inscrire un nouvel élève</a>  
-			<br><a href = "accueil.html" target = "content">Retour à l'accueil</a>  
+			<br><a href = "accueil.html" target = "content" onclick = "changeColors('acc_div')">Retour à l'accueil</a>  
 		</div>
 		<div class = "page_footer">
 			<?php

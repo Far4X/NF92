@@ -4,7 +4,9 @@
 		<title> Thème ajouté </title>
 		<link rel = "stylesheet" href = "style.css" type = "text/css">
 	</head>
-	<body>
+    <body>
+
+        <script link = "script.js"></script>
 		<div class = "page_header"> Ajouter un thème </div>
 		<div class = "page_content">
 		<?php
@@ -63,7 +65,7 @@
 	?>
 	
 		<br><a href = "ajout_theme.html"> Ajouter d'autres thèmes</a> 
-		<br><a href = "accueil.html">Retour à l'accueil</a>
+		<br><a href = "accueil.html" onclick = "changeColors('acc_div')">Retour à l'accueil</a>
 
 		</div>
 		<div class = "page_footer"></div>

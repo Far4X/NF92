@@ -5,6 +5,8 @@
 	<link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
+        
+        <script link = "script.js"></script>
         <div class = "page_header">Valider séance</div>
         <div class = "page_content">
             <?php
@@ -35,7 +37,7 @@
         printf("Les notes ont été entrées avec succès !");
     ?>
         <br><a href = "validation_seance.php" target = "content">Valider une nouvelle séance </a><br>
-        <a href = "accueil.html" target = "content">Retour vers l'accueil</a>
+        <a href = "accueil.html" target = "content" onclick = "changeColors('acc_div')">Retour vers l'accueil</a>
         </div>
 
         <div class = "page_footer">

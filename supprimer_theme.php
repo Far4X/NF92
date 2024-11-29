@@ -6,6 +6,8 @@
     </head>
     <body>
         <div class = "page_header"> Supprimer un thème </div>
+
+        <script link = "script.js"></script>
         <div class = "page_content"> 
             <?php
                 $to_supress = $_POST["target"];
@@ -40,7 +42,7 @@
             ?>  
             Thème et séances futures liées à ce thème supprimés avec succès ! <br><hr>
             <a href = "suppression_theme.php">Supprimer un autre thème</a><br>
-            <a href = "accueil.html"> Retour à l'accueil</a>
+            <a href = "accueil.html" onclick = "changeColors('acc_div')"> Retour à l'accueil</a>
         </div>
         <div class = "page_footer">
             <?php

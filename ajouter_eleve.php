@@ -24,7 +24,8 @@
 
 
 		date_default_timezone_set('Europe/Paris');
-		$tddate = date("Y\-m\-d");
+        $tddate = date("Y\-m\-d");
+        $required_bday = (new DateTime(date("Y\-m\-d")))-> modify("-15 years");
 		printf("Requête analysée le %s <br><br>", $tddate);
 		if (empty($l_name) || empty($f_name) || empty($bday)){
 			printf("<div class = 'error'>Mauvaise requête. Cela n'a pas été traité.</div>");
@@ -35,7 +36,10 @@
 		}
 		else if ($bday > $tddate){
 			printf("<div class = 'error'>Mauvaise requête. La date n'est pas valide.</div>");
-		}
+        }
+        else if ($bday > $required_bday){
+            printf("<div class = 'error'>L'élève n'a pas 15 ans, inscription impossible !");
+        }
 		else {
 			$dbuser = "nf92a065";
 			$dbhost = "tuxa.sme.utc";
@@ -51,7 +55,7 @@
 
 			if (mysqli_num_rows($result) == 0){
 				$query = "INSERT INTO eleves (`idEleve`, `nom`, `prenom`,`dateNaissance`,`dateInscription`) VALUES (NULL, '$l_name', '$f_name', '$bday', '$tddate')";
-				echo $query.'<br>';
+				//echo $query.'<br>';
 				mysqli_query($connect, $query);
 				printf("Vous avez ajouté %s %s, né(e) le %s.", $f_name, $l_name, $bday);
 			}
