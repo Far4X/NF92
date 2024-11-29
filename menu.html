@@ -5,6 +5,7 @@
 		<title> Menu </title>
 	</head>
 	<body>
+        <script link = "script.js"></script>
 		<!--<h1> Navigation </h1>
 		<ul> 
 			<li><a href = "accueil.html" target = "content"> Accueil</a></li> 
@@ -32,15 +33,5 @@
 			<div id = "vil_div" class = "menu_elem" onclick = 'changeColors("vil_div");parent.frames["content"].location.replace("visualisation_calendrier_eleve.php")'>Visualiser le calendrier d'un élève</div>
 		
 
-		<script>
-			function changeColors(raiser){	
-				
-				var elems = document.getElementsByClassName("menu_elem");
-				for (var i = 0; i < elems.length; i++){
-					elems[i].style.backgroundColor = "#145E5B";
-				}
-				document.getElementById(raiser).style.backgroundColor = "#DDDDDD";
-			}
-		</script>
 	</body>
 </html>

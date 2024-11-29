@@ -6,6 +6,8 @@
     </head>
     <body>
         <!-- Pas de RQST si pas chgt note -->
+        
+        <script link = "script.js"></script>
         <div class = "page_header">Valider une séance</div>
         <div class = "page_content">
             <form method = "POST" action = "noter_eleves.php">
@@ -42,9 +44,10 @@
 
             </form>
 		<br>
-	    <a href = "accueil.html" target = "content">Retour à l'acceuil</a>
+	    <a href = "accueil.html" target = "content" onclick = "changeColors('acc_div')">Retour à l'acceuil</a>
+            
 	    <br>
-            <a href = "validation_seance.php" target = "content">Valider une autre séance</a>
+        <a href = "validation_seance.php" target = "content">Valider une autre séance</a>
 
         </div>
         <div class = "page_footer">

@@ -11,7 +11,7 @@
 	    Veuillez sélectionner le thème à supprimer : <br>
             <form method = "POST" action = "supprimer_theme.php">
                 <table border = "0">
-                    <tr> <td> Nom du thème </td> <td> Supprimer </td> </tr>
+                    
                     <?php
 
                     $dbhost = "tuxa.sme.utc";
@@ -24,11 +24,12 @@
                     $query = "SELECT idTheme, Nom FROM themes WHERE supprime = '0'";
 
                     $result = mysqli_query($connect, $query);
-
+                    echo "<select name = 'target' size = 10>";
                     while($row = mysqli_fetch_array($result)){
-                        printf("<tr><td>%s</td><td><input type = 'radio' name = 'target' value = '%s'></td></tr>", $row[1], $row[0]);
-
+                        
+                        printf("<option value = '%s'>%s</option>", $row[0], $row[1]);
                     }
+                    echo "</select>"
 
                     
                 ?>
