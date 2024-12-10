@@ -21,7 +21,7 @@
 
                 $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
                 $query = "SELECT el.nom, el.idEleve, el.prenom, ins.note FROM eleves AS el
-                        JOIN inscriptions AS ins ON el.idEleve = ins.ideleve WHERE ins.idSeance = '".$seance."'";
+                        JOIN inscription AS ins ON el.idEleve = ins.ideleve WHERE ins.idSeance = '".$seance."'";
                 $result = mysqli_query($connect, $query);
                 if (mysqli_num_rows($result) == 0){
                     printf("<div class = 'error'>Aucun élève inscrit à cette séance</div>");

@@ -19,7 +19,7 @@
 
             $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
             $id_eleve = $_POST["id_eleve"];
-            $query = "SELECT ins.note, sc.DateSeance, th.Nom FROM inscriptions AS ins 
+            $query = "SELECT ins.note, sc.DateSeance, th.Nom FROM inscription AS ins 
                 JOIN seances AS sc ON ins.idseance = sc.idSeance
                 JOIN themes AS th ON th.idTheme = sc.idTheme
                     WHERE sc.DateSeance < '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";
@@ -40,7 +40,7 @@
 
 
             echo "<hr>Séance futures : <br>";
-            $query = "SELECT sc.DateSeance, th.Nom FROM inscriptions AS ins 
+            $query = "SELECT sc.DateSeance, th.Nom FROM inscription AS ins 
                 JOIN seances AS sc ON ins.idseance = sc.idSeance
                 JOIN themes AS th ON th.idTheme = sc.idTheme
 		    WHERE sc.DateSeance >= '".date("Y\-m\-d")."' AND ins.ideleve = $id_eleve ORDER BY sc.DateSeance ASC";

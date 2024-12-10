@@ -32,7 +32,7 @@
 				echo "<select name = 'sc' size = '10'>";
 
 				while ($row = mysqli_fetch_array($result)) {
-					$query = "SELECT * FROM inscriptions AS ins 
+					$query = "SELECT * FROM inscription AS ins 
 						JOIN seances AS sc ON sc.idSeance = ins.idseance
 						WHERE sc.idSeance = '".$row[0]."' AND ins.note = '-1'";
 					;		

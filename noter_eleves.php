@@ -19,7 +19,7 @@
             $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
             $seance = $_POST["idseance"];
             //TODO: Repasser par l'id des élèves. Pas de compteur.
-            $query = "SELECT el.idEleve FROM eleves AS el JOIN inscriptions AS ins ON el.ideleve = ins.idEleve WHERE ins.idSeance = $seance";
+            $query = "SELECT el.idEleve FROM eleves AS el JOIN inscription AS ins ON el.ideleve = ins.idEleve WHERE ins.idSeance = $seance";
             //echo $query;
             $result = mysqli_query($connect, $query);
 
@@ -27,7 +27,7 @@
                 $current_el_nbfautes = $_POST["el".$row[0]."note"];
                 if ($current_el_nbfautes != -1 ){ //empty($current_el_nbfautes)
                     $note = (40 - $current_el_nbfautes)/2;
-                    $query = "UPDATE inscriptions SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$row[0]."'";
+                    $query = "UPDATE inscription SET note = ".$note." WHERE `idSeance` = '".$seance."' AND `idEleve` = '".$row[0]."'";
                     //echo $query; 
                     mysqli_query($connect, $query);
                 }

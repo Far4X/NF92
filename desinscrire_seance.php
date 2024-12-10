@@ -31,7 +31,7 @@
                 }
 
                 
-                $query = "DELETE FROM inscriptions WHERE `ideleve` = '$id_eleve' AND `idseance` = '$id_seance'";
+                $query = "DELETE FROM inscription WHERE `ideleve` = '$id_eleve' AND `idseance` = '$id_seance'";
                 //echo $query;//TODO:Test
 		echo "L'élève a bien été désinscrit";
                 mysqli_query($connect, $query);

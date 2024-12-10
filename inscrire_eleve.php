@@ -18,7 +18,7 @@
 			$connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Unable to reach database");
 			$ideleve = $_POST["ideleve"];
 			$idseance = $_POST["idseance"];	
-			$query = "SELECT * FROM inscriptions WHERE idseance = '".$idseance."' AND ideleve = '".$ideleve."'";
+			$query = "SELECT * FROM inscription WHERE idseance = '".$idseance."' AND ideleve = '".$ideleve."'";
 			$result = mysqli_query($connect, $query);
 			if (mysqli_num_rows($result) == 0){
 				$query = "SELECT EffMax FROM seances WHERE idSeance = '".$idseance."'";
@@ -26,14 +26,14 @@
 
 
 				$query = "SELECT COUNT(*) FROM eleves el
-						JOIN inscriptions insc ON insc.idEleve = el.idEleve
+						JOIN inscription insc ON insc.idEleve = el.idEleve
 						JOIN seances se ON insc.idSeance = se.idSeance
 						WHERE se.idSeance = '".$idseance."'";
 				
 
 				if (mysqli_fetch_row(mysqli_query($connect, $query))[0]< $capa){
 
-					$query = "INSERT INTO inscriptions (`idseance`, `ideleve`, `note`) VALUES ('".$idseance."', '".$ideleve."', -1)";
+					$query = "INSERT INTO inscription (`idseance`, `ideleve`, `note`) VALUES ('".$idseance."', '".$ideleve."', -1)";
 					mysqli_query($connect, $query);
 					printf("L'élève a bien été ajouté à la séance"); //Si tps : mettre nom el et th + date sc + check si max capa a déjà été atteint
 				}
